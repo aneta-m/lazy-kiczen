@@ -1,0 +1,39 @@
+@import '../utilities/module';
+
+.dropdown {
+    display: none;
+
+
+    &__item {
+        color: $grey;
+
+    }
+
+    &--active {
+        display: grid;
+    }
+
+}
+
+@media (min-width: $large-breakpoint) {
+    .dropdown {
+        background-color: white;
+        display: grid;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        width: 100%;
+
+        &__item {
+            padding: 0.5rem;
+            border-bottom: 1px solid $lightgrey;
+            text-align: center;
+            color: $dark;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+
+    }
+}

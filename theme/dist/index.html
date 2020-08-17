@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <title>Lazy Kiczen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/296ac1e1a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="page">
+    <div class="page__inner">
+        <header class="header header--actve page__header">
+            <div class="header__inner">
+                <div class="header__logo logo"><a class="logo__link"><img alt="logo" src="../assets/images/logo.png"
+                            class="logo__img"></a></div>
+                <a class="btn header__btn"><i class="fas fa-bars nav__icon"></i></a>
+
+                <nav class="nav header__nav nav--mobile">
+
+                    <ul class="nav__list">
+                        <li class="nav__item"> <a class="nav__link btn">Twoje
+                                przepisy</a></li>
+                        <li class="nav__item"> <a class="nav__link btn">Dodaj
+                                przepis</a></li>
+                        <li class="nav__item"> <a class="nav__link btn">Twoje
+                                konto<i class="fas fa-chevron-down btn__icon btn__icon--primary"></i></a>
+                            <ul class="nav__list nav__dropdown dropdown dropdown--active">
+                                <li class="nav__item dropdown__item"><a class="dropdown__link btn">Twój profil</a></li>
+                                <li class="nav__item dropdown__item"><a class="dropdown__link btn">Twoje plany</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item"><a class="nav__link btn">Wyloguj</a></li>
+                    </ul>
+
+                </nav>
+                <nav class="header__nav nav nav--desktop">
+                    <ul class="nav__list">
+                        <li class="nav__item"> <a class="nav__link btn"><i
+                                    class="fas fa-book  btn__icon btn__icon--primary"></i>Recipes</a></li>
+                        <li class="nav__item"> <a class="nav__link btn"><i
+                                    class="fas fa-plus btn__icon btn__icon--secondary"></i>Add new</a></li>
+                        <li class="nav__item--dropdown"> <a class="nav__link btn btn--bg-white"><i
+                                    class="fas fa-user-alt btn__icon btn__icon--accent"></i>Account<i
+                                    class="fas fa-chevron-down btn__icon"></i></a>
+                            <ul class="dropdown dropdown--active nav__dropdown">
+                                <li class="dropdown__item"><a class="dropdown__link">Twój profil</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">Twoje plany</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">Wyloguj</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </header>
+        <aside class="aside page__aside">
+            <div class="slider">
+                <div class="slider__inner">
+                    <div class="slide slider__slide">
+                        <h2 class="slide__hd">Current week plan</h2>
+                        <ul class="slide__cards-list">
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd">Monday</h3>
+                                    <div class="card__body">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Tarta szpinakowa</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd ">Tuesday</h3>
+                                    <div class="card__content">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Zaplanuj</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd ">Wednesday</h3>
+                                    <div class="card__content">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Tarta szpinakowa</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd ">Thursday</h3>
+                                    <div class="card__content">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Zaplanuj</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd ">Friday</h3>
+                                    <div class="card__content">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Tarta szpinakowa</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd ">Saturday</h3>
+                                    <div class="card__content">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Zaplanuj</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="slide__list-item">
+                                <div class="card">
+                                    <h3 class="card__hd ">Sunday</h3>
+                                    <div class="card__content">
+                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
+                                            class="card__link">Tarta szpinakowa</a>
+                                        <button class="card__action btn"></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="slider__navigation">
+                        <button class="btn slider__btn"><i class="fa fa-play pagination__icon"></i></button>
+                        <ul class="pagination slider__pagination">
+                            <li class="pagination__elem">
+                                <a href="" class="pagination__link"></a>
+                            </li>
+                            <li class="pagination__elem">
+                                <a href="" class="pagination__link"></a>
+                            </li>
+                            <li class="pagination__elem">
+                                <a href="" class="pagination__link"></a>
+                            </li>
+                            <li class="pagination__elem">
+                                <a href="" class="pagination__link"></a>
+                            </li>
+                            <li class="pagination__elem">
+                                <a href="" class="pagination__link"></a>
+                            </li>
+                        </ul>
+                        <button class="slider__btn btn"><i class="fa fa-play pagination__icon"></i></button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="main-content page__main">
+            <form class="form search-form">
+                <input class="input search-form__input" type="text" placeholder="Search for meals" />
+                <div class="select search-form__select">Category<i class="fas fa-chevron-down select__icon"></i>
+                    <ul class="select-dropdown">
+                        <li class="select__item">Śniadania </li>
+                        <li class="select__item select__item--checked">Obiady <i class="fas fa-check select__icon"></i>
+                        </li>
+                        <li class="select__item">Desery </li>
+                    </ul>
+                </div>
+                <input class="button search__submit" type="submit" value="Search" />
+            </form>
+        </div>
+        <footer class="footer page__footer">
+            <div class="footer__inner">
+                <div class="copyright">
+                    <p class="copyright__text copyright__text--size_s">copyright</p>
+                    <p class="copyright__text">lazy kiczen inc</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

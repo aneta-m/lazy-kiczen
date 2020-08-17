@@ -1,0 +1,73 @@
+@import '../utilities/module';
+
+.header {
+    &__inner {
+        position: relative;
+    }
+
+    &__btn {
+        position: absolute;
+        margin: 1rem;
+        top: 0;
+        right: 0;
+    }
+
+    &__nav {
+        display: none;
+        margin-top: 3vh;
+        margin-left: 3vh;
+    }
+
+    &--active {
+        .header__inner {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            background-image: linear-gradient($lightgrey, rgb(255, 255, 255));
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .nav--mobile {
+            display: block;
+            overflow-y: scroll;
+        }
+
+        // not a case in production - class 'header--active' only available on mobile
+        @media (min-width: $large-breakpoint) {
+            .nav--mobile {
+                display: none;
+            }
+        }
+
+        .header__btn {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $large-breakpoint) {
+
+    .header {
+        &__inner {
+            min-height: auto;
+            display: grid;
+            justify-items: end;
+            grid-template-rows: auto;
+            grid-template-columns: auto 1fr;
+            background-image: none;
+        }
+
+        &__btn {
+            display: none;
+        }
+
+        &__nav {
+            align-self: center;
+            margin: 0;
+        }
+    }
+}

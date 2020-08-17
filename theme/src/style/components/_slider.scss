@@ -1,0 +1,18 @@
+@import '../utilities/module';
+
+.slider {
+    background-color: white;
+    border-radius: 1rem;
+
+    &__inner {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+@media (min-width: $large-breakpoint) {
+    .slider {
+        &__inner {
+            padding: 1.5rem 0;
+        }
+    }
+}

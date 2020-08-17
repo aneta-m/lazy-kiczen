@@ -1,0 +1,15 @@
+@import '../utilities/module';
+
+.slide {
+    &__hd {
+        font-size: $font-m;
+        font-weight: 500;
+    }
+
+
+    &__cards-list {
+        padding: 1.5rem 0;
+        display: grid;
+        gap: 1rem;
+    }
+}

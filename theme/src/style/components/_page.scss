@@ -1,0 +1,37 @@
+@import '../utilities/module';
+
+.page {
+    background-color: #eee;
+    background-image:
+        linear-gradient(transparent, white 70vh),
+        linear-gradient(45deg, $lightgrey 25%, transparent 25%, transparent 75%, $lightgrey 75%, $lightgrey),
+        linear-gradient(45deg, $lightgrey 25%, transparent 25%, transparent 75%, $lightgrey 75%, $lightgrey), ;
+    background-size: auto, 30px 30px, 30px 30px;
+    background-position: 0 0, 0 0, 15px 15px;
+
+    &__inner {
+        min-height: 100vh;
+    }
+}
+
+@media (min-width: $large-breakpoint) {
+    .page {
+        &__inner {
+            max-width: $xl-breakpoint;
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 1rem;
+            align-content: start;
+        }
+
+        &__header {
+            grid-column: 1/-1;
+        }
+
+        &__footer {
+            grid-column: 1/-1;
+        }
+
+    }
+}

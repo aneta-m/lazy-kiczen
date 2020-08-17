@@ -1,0 +1,25 @@
+@import '../utilities/module';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+    list-style-type: none;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}

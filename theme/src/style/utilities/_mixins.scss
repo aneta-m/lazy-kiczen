@@ -1,0 +1,13 @@
+@import 'variables';
+
+$basic-colors: (primary: $primary-color,
+    secondary: $secondary-color,
+    accent: $accent-color);
+
+@mixin color-modifiers($colors-map: $basic-colors, $property-to-set: color) {
+    @each $name, $color in $colors-map {
+        &--#{$name} {
+            #{$property-to-set}: $color;
+        }
+    }
+}

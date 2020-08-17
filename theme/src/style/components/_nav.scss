@@ -1,0 +1,64 @@
+@import '../utilities/module';
+
+.nav {
+
+    &--desktop {
+        display: none;
+    }
+
+
+    &__icon {
+        font-size: 1.5rem;
+    }
+
+    &__list {
+        padding: 1rem;
+        margin: 0;
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__dropdown {
+        padding-bottom: 0;
+    }
+
+}
+
+
+@media (min-width: $large-breakpoint) {
+
+
+    .nav {
+        &--desktop {
+            display: block;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
+        &__list {
+            grid-template-columns: auto auto auto;
+        }
+
+        &__item--dropdown {
+            position: relative;
+        }
+
+        &__link {
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+        }
+
+        &__dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+    }
+
+
+
+}
