@@ -2,12 +2,21 @@
 
 $basic-colors: (primary: $primary-color,
     secondary: $secondary-color,
-    accent: $accent-color);
+    accent: $accent-color,
+    grey: $grey);
+
+
+
 
 @mixin color-modifiers($colors-map: $basic-colors, $property-to-set: color) {
     @each $name, $color in $colors-map {
         &--#{$name} {
             #{$property-to-set}: $color;
+
+            &:hover, &:focus, &:active {
+                #{$property-to-set}: lighten($color, 10%);
+            }
         }
+
     }
 }

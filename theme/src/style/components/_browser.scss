@@ -1,0 +1,89 @@
+@import '../utilities/module';
+
+.browser {
+
+    &__mobile-search {
+        margin: 0 1rem 1rem;
+    }
+
+    &__desktop-search {
+        display: none;
+    }
+
+    &__collapsible {
+        display: none;
+
+        &--is-open {
+            padding: 1rem;
+            margin: 0 1rem;
+            display: block;
+            box-shadow: $light-shadow;
+            border-radius: 20px;
+            position: relative;
+        }
+    }
+
+    &__item-close {
+        color: $grey;
+        font-size: 24px;
+        font-family: arial;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    &__main {
+        padding: 1rem 0;
+
+    }
+
+    &__main-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 0 1rem;
+        align-items: start;
+    }
+
+    &__action {
+        justify-self: end;
+        padding-right: 0;
+    }
+
+    &__labels {
+        padding: 1rem 1rem 0;
+    }
+}
+
+@media(min-width: $large-breakpoint) {
+    .browser {
+        &__mobile-search {
+            display: none;
+        }
+
+        &__desktop-search {
+            display: grid;
+            margin: 0 auto 1rem;
+            max-width: 550px;
+        }
+
+        &__action {
+            display: none;
+        }
+
+        &__collapsible {
+            display: none;
+
+            &--is-open {
+                display: none;
+            }
+        }
+
+        &__main-header {
+            padding: 0;
+        }
+
+        &__labels {
+            padding: 1rem 0 0;
+        }
+    }
+}

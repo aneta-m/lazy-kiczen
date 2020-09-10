@@ -1,0 +1,129 @@
+@import '../utilities/module';
+
+.calendar {
+
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: $light-shadow;
+
+    &__inner {
+        padding: 0.5rem;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    &__btn {
+        padding: 0.5rem 1rem;
+        font-size: 24px;
+
+        &:hover, &:active, &:focus {
+            color: $primary-color;
+        }
+    }
+
+    &__header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 1;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+    }
+
+    &__legend {
+        display: none;
+    }
+
+    &__item {
+        border-top: 1px solid $lightgrey;
+
+        &:hover {
+            background-color: lighten($lightgrey, 2%);
+        }
+
+        &--mobile-hidden {
+            display: none;
+        }
+
+        &--mobile-hidden+& {
+            border-top: none;
+        }
+    }
+
+    &__title {
+        padding: 1rem;
+    }
+}
+
+@media(min-width: $large-breakpoint) {
+    .calendar {
+        border-top-left-radius: 0;
+        position: relative;
+
+        &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            right: 100%;
+            width: 1200px;
+            height: 100%;
+            background-color: white;
+        }
+
+        &__inner {
+            padding: 1rem;
+        }
+
+        &__header {
+            position: relative;
+        }
+
+        &__legend {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+        }
+
+        &__legend-item {
+            padding: 1rem;
+            color: $dark-grey;
+            width: 100%;
+            text-align: center;
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        &__item {
+            padding: 1rem 0 1rem 1rem;
+            border-top: 1px solid $dark-grey;
+            border-right: 1px solid $dark-grey;
+            min-height: 90px;
+
+            &:nth-child(7n+0) {
+                border-right: none;
+            }
+
+            &--mobile-hidden {
+                display: grid;
+            }
+
+            &--mobile-hidden+& {
+                border-top: 1px solid $dark-grey;
+            }
+        }
+
+
+    }
+
+}

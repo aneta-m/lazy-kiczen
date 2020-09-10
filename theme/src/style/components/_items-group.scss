@@ -1,0 +1,21 @@
+@import '../utilities/module';
+
+.items-group {
+
+    &__inner {
+        padding: 1.5rem 1rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__item-title {
+        padding-bottom: 0.75rem;
+    }
+
+    &__list {
+        display: grid;
+        gap: 0.5rem;
+    }
+}
+
+@media(min-width: $large-breakpoint) {}

@@ -1,0 +1,24 @@
+@import '../utilities/module';
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    border-radius: 20px;
+    box-shadow: $light-shadow;
+
+    &--short {
+        grid-template-columns: 1fr auto;
+    }
+
+    &>*:first-child {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: 1px solid $lightgrey;
+    }
+
+    &>*:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+}

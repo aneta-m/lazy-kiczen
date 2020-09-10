@@ -1,0 +1,29 @@
+@import '../utilities/module';
+
+.select {
+    position: relative;
+
+    &__label {
+        padding: 12px;
+        background-color: white;
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+    }
+
+    &__icon {
+        padding: 0 0.5rem;
+    }
+}
+
+
+@media (min-width: $large-breakpoint) {
+    .select {
+        &__label {
+            color: $dark;
+            padding: $normal-padding;
+        }
+    }
+}

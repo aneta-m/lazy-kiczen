@@ -1,0 +1,48 @@
+@import '../utilities/module';
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    &__content {
+        position: relative;
+        max-height: 100vh;
+        overflow-y: auto;
+        background-color: white;
+        box-shadow: $light-shadow;
+        border-radius: 20px;
+
+        &--size-small {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 24px;
+        z-index: 2;
+    }
+}
+
+@media(min-width: $large-breakpoint) {
+    .modal {
+        &__title {
+            padding: 1rem 0 1.5rem;
+        }
+
+        &__content {
+            width: $large-breakpoint;
+            padding: 2rem 3rem;
+        }
+    }
+}

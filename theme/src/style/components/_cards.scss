@@ -1,0 +1,39 @@
+@import '../utilities/module';
+
+.cards {
+    &__title {
+        padding: 1rem 0 1rem 1rem;
+        font-size: $font-m;
+        color: $primary-color;
+        font-weight: 400;
+
+        &--grey {
+            color: $dark-grey;
+        }
+    }
+
+    &__item {
+        padding-bottom: 0.5rem;
+
+        &--padding-l {
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+@media(min-width: $large-breakpoint) {
+    .cards {
+        &__title {
+            padding: 1rem 0;
+        }
+
+        &__item {
+            padding: 0 0 0.5rem 0;
+
+            &--padding-l
+ {
+                padding-bottom: 1rem;
+            }
+        }
+    }
+}

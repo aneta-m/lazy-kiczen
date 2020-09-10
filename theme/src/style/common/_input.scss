@@ -1,0 +1,27 @@
+@import '../utilities/module';
+
+.input {
+    border: none;
+    border-radius: 20px;
+    padding: $small-padding;
+    font-size: $font-main;
+    color: $dark;
+    width: 100%;
+
+    &::placeholder {
+        color: $grey;
+        font-size: $font-main;
+    }
+
+    &--has-border {
+        border: 1px solid $lightgrey;
+    }
+}
+
+
+@media (min-width: $large-breakpoint) {
+    .input {
+        padding: $normal-padding;
+
+    }
+}

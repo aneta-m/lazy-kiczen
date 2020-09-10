@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: $font-main;
+    color: $dark;
 }
 
 ul {
@@ -22,4 +23,19 @@ li {
 h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+fieldset {
+    border: none;
 }

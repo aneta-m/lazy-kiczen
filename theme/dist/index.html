@@ -9,180 +9,294 @@
     <link rel="stylesheet" href="css/main.min.css" />
     <title>Lazy Kiczen</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/lcp4pfy.css">
     <script src="https://kit.fontawesome.com/296ac1e1a4.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="page">
+<body class="page bg">
     <div class="page__inner">
-        <header class="header header--actve page__header">
-            <div class="header__inner">
-                <div class="header__logo logo"><a class="logo__link"><img alt="logo" src="../assets/images/logo.png"
-                            class="logo__img"></a></div>
-                <a class="btn header__btn"><i class="fas fa-bars nav__icon"></i></a>
+        <div class="page__grid">
+            <header class="header header--actve page__header">
+                <div class="header__inner">
+                    <div class="header__logo logo"><a class="logo__link"><img alt="logo" src="../assets/images/logo.png"
+                                class="logo__img"></a></div>
+                    <a class="btn header__btn"><i class="fas fa-bars nav__icon"></i></a>
 
-                <nav class="nav header__nav nav--mobile">
+                    <div class="header__search">
+                        <form class="search-form search-form--short">
+                            <input class="search-form__input input" type="text" placeholder="Search for meals"
+                                size="15" />
+                            <button class="btn btn--bg-primary search-form__btn" type="submit" value="Search"><i
+                                    class="fas fa-search btn__icon"></i></button>
+                        </form>
+                    </div>
+                    <nav class="nav header__nav nav--mobile">
 
-                    <ul class="nav__list">
-                        <li class="nav__item"> <a class="nav__link btn">Twoje
-                                przepisy</a></li>
-                        <li class="nav__item"> <a class="nav__link btn">Dodaj
-                                przepis</a></li>
-                        <li class="nav__item"> <a class="nav__link btn">Twoje
-                                konto<i class="fas fa-chevron-down btn__icon btn__icon--primary"></i></a>
-                            <ul class="nav__list nav__dropdown dropdown dropdown--active">
-                                <li class="nav__item dropdown__item"><a class="dropdown__link btn">Twój profil</a></li>
-                                <li class="nav__item dropdown__item"><a class="dropdown__link btn">Twoje plany</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav__item"><a class="nav__link btn">Wyloguj</a></li>
-                    </ul>
+                        <ul class="nav__list">
+                            <li class="nav__item"> <a href="recipes.html" class="nav__link btn">Twoje
+                                    przepisy</a></li>
+                            <li class="nav__item"> <a href="add_new.html" class="nav__link btn">Dodaj
+                                    przepis</a></li>
+                            <li class="nav__item"> <a href="#" class="nav__link btn">Twoje
+                                    konto<i class="fas fa-chevron-down btn__icon btn__icon--primary"></i></a>
+                                <ul class="nav__list nav__dropdown dropdown dropdown--active">
+                                    <li class="nav__item dropdown__item"><a href="profile.html"
+                                            class="dropdown__link btn">Twój profil</a>
+                                    </li>
+                                    <li class="nav__item dropdown__item"><a href="plans.html"
+                                            class="dropdown__link btn">Twoje plany</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item"><a href="login.html" class="nav__link btn">Wyloguj</a></li>
+                        </ul>
 
-                </nav>
-                <nav class="header__nav nav nav--desktop">
-                    <ul class="nav__list">
-                        <li class="nav__item"> <a class="nav__link btn"><i
-                                    class="fas fa-book  btn__icon btn__icon--primary"></i>Recipes</a></li>
-                        <li class="nav__item"> <a class="nav__link btn"><i
-                                    class="fas fa-plus btn__icon btn__icon--secondary"></i>Add new</a></li>
-                        <li class="nav__item--dropdown"> <a class="nav__link btn btn--bg-white"><i
-                                    class="fas fa-user-alt btn__icon btn__icon--accent"></i>Account<i
-                                    class="fas fa-chevron-down btn__icon"></i></a>
-                            <ul class="dropdown dropdown--active nav__dropdown">
-                                <li class="dropdown__item"><a class="dropdown__link">Twój profil</a></li>
-                                <li class="dropdown__item"><a class="dropdown__link">Twoje plany</a></li>
-                                <li class="dropdown__item"><a class="dropdown__link">Wyloguj</a></li>
-
-                            </ul>
-                        </li>
-                    </ul>
-
-                </nav>
-            </div>
-        </header>
-        <aside class="aside page__aside">
-            <div class="slider">
-                <div class="slider__inner">
-                    <div class="slide slider__slide">
-                        <h2 class="slide__hd">Current week plan</h2>
-                        <ul class="slide__cards-list">
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd">Monday</h3>
-                                    <div class="card__body">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Tarta szpinakowa</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
-
-                            </li>
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd ">Tuesday</h3>
-                                    <div class="card__content">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Zaplanuj</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd ">Wednesday</h3>
-                                    <div class="card__content">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Tarta szpinakowa</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd ">Thursday</h3>
-                                    <div class="card__content">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Zaplanuj</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd ">Friday</h3>
-                                    <div class="card__content">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Tarta szpinakowa</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd ">Saturday</h3>
-                                    <div class="card__content">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Zaplanuj</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="slide__list-item">
-                                <div class="card">
-                                    <h3 class="card__hd ">Sunday</h3>
-                                    <div class="card__content">
-                                        <a href="https://www.jadlonomia.com/przepisy/weganska-tarta-czekoladowa-idealna/"
-                                            class="card__link">Tarta szpinakowa</a>
-                                        <button class="card__action btn"></button>
-                                    </div>
-                                </div>
+                    </nav>
+                    <nav class="header__nav nav nav--desktop">
+                        <ul class="nav__list">
+                            <li class="nav__item"> <a href="recipes.html" class="nav__link btn"><i
+                                        class="fas fa-book  btn__icon btn__icon--primary"></i>Recipes</a></li>
+                            <li class="nav__item"> <a href="add_new.html" class="nav__link btn"><i
+                                        class="fas fa-plus btn__icon btn__icon--secondary"></i>Add new</a></li>
+                            <li class="nav__item--dropdown"> <button class="nav__link btn btn--bg-white"><i
+                                        class="fas fa-user-alt btn__icon btn__icon--accent"></i>Account<i
+                                        class="fas fa-chevron-down btn__icon"></i></button>
+                                <ul class="dropdown dropdown--actve nav__dropdown">
+                                    <li class="dropdown__item"><a href="profile.html" class="dropdown__link btn">Twój
+                                            profil</a></li>
+                                    <li class="dropdown__item"><a href="plans.html" class="dropdown__link btn">Twoje
+                                            plany</a></li>
+                                    <li class="dropdown__item"><a href="login.html"
+                                            class="dropdown__link btn">Wyloguj</a></li>
+                                </ul>
                             </li>
                         </ul>
-                    </div>
 
-                    <div class="slider__navigation">
-                        <button class="btn slider__btn"><i class="fa fa-play pagination__icon"></i></button>
-                        <ul class="pagination slider__pagination">
-                            <li class="pagination__elem">
-                                <a href="" class="pagination__link"></a>
-                            </li>
-                            <li class="pagination__elem">
-                                <a href="" class="pagination__link"></a>
-                            </li>
-                            <li class="pagination__elem">
-                                <a href="" class="pagination__link"></a>
-                            </li>
-                            <li class="pagination__elem">
-                                <a href="" class="pagination__link"></a>
-                            </li>
-                            <li class="pagination__elem">
-                                <a href="" class="pagination__link"></a>
-                            </li>
-                        </ul>
-                        <button class="slider__btn btn"><i class="fa fa-play pagination__icon"></i></button>
-                    </div>
+                    </nav>
                 </div>
-            </div>
-        </aside>
-        <div class="main-content page__main">
-            <form class="form search-form">
-                <input class="input search-form__input" type="text" placeholder="Search for meals" />
-                <div class="select search-form__select">Category<i class="fas fa-chevron-down select__icon"></i>
-                    <ul class="select-dropdown">
-                        <li class="select__item">Śniadania </li>
-                        <li class="select__item select__item--checked">Obiady <i class="fas fa-check select__icon"></i>
+            </header>
+            <aside class="aside page__aside">
+                <div class="aside__item slider">
+                    <button class="aside__btn btn btn__icon--rotated">+</button>
+                    <div class="slider__inner">
+                        <div class="planner slider__slide">
+                            <h3 class="hd-m">Current week plan</h3>
+                            <ul class="planner__list">
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title"> Monday</h4>
+                                    <div class=" planner-item__content">
+                                        <a href="show_item.html" class="planner-item__link btn">Tarta szpinakowa</a>
+                                        <a class="planner-item__btn btn btn--primary"><span
+                                                class="planner-item__icon btn__icon btn__icon--rotated">+</span></a>
+                                    </div>
+                                </li>
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title">Tuesday</h4>
+                                    <div class="planner-item__content">
+                                        <a href=""
+                                            class="planner-item__btn planner-item__btn--width-full btn btn--secondary">Zaplanuj<span
+                                                class="planner-item__icon btn__icon">+</span></a>
+                                    </div>
+                                </li>
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title">Wednesday</h4>
+                                    <div class="planner-item__content">
+                                        <a href="show_item.html" class="planner-item__link btn">Tarta szpinakowa</a>
+                                        <a class="planner-item__btn btn btn--primary"><span
+                                                class="planner-item__icon btn__icon btn__icon--rotated">+</span></a>
+                                    </div>
+
+                                </li>
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title">Thursday</h4>
+                                    <div class="planner-item__content">
+                                        <a href=""
+                                            class="planner-item__btn planner-item__btn--width-full btn btn--secondary">Zaplanuj<span
+                                                class="planner-item__icon btn__icon">+</span></a>
+                                    </div>
+                                </li>
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title">Friday</h4>
+                                    <div class="planner-item__content">
+                                        <a href="show_item.html" class="planner-item__link btn">Tarta szpinakowa</a>
+                                        <a class="planner-item__btn btn btn--primary"><span
+                                                class="planner-item__icon btn__icon btn__icon--rotated">+</span></a>
+                                    </div>
+                                </li>
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title">Saturday</h4>
+                                    <div class="planner-item__content">
+                                        <a href=""
+                                            class="planner-item__btn planner-item__btn--width-full btn btn--secondary">Zaplanuj<span
+                                                class="planner-item__icon btn__icon">+</span></a>
+                                    </div>
+                                </li>
+                                <li class="planner-item">
+                                    <h4 class="planner-item__title">Sunday</h4>
+                                    <div class="planner-item__content">
+                                        <a href="show_item.html" class="planner-item__link btn">Tarta szpinakowa</a>
+                                        <a class="planner-item__btn btn btn--primary"><span
+                                                class="planner-item__icon btn__icon btn__icon--rotated">+</span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="slider__navigation slider-nav">
+                            <button class="btn slider-nav__btn"><i class="fa fa-play slider-nav__icon"></i></button>
+                            <ul class="slider-nav__pagination">
+                                <li class="slider-nav__page-item">
+                                    <a href="" class="slider-nav__link"></a>
+                                </li>
+                                <li class="slider-nav__page-item">
+                                    <a href="" class="slider-nav__link"></a>
+                                </li>
+                                <li class="slider-nav__page-item">
+                                    <a href="" class="slider-nav__link slider-nav__link--secondary"></a>
+                                </li>
+                                <li class="slider-nav__page-item">
+                                    <a href="" class="slider-nav__link"></a>
+                                </li>
+                                <li class="slider-nav__page-item">
+                                    <a href="" class="slider-nav__link"></a>
+                                </li>
+                            </ul>
+                            <button class="slider-nav__btn btn"><i class="fa fa-play slider-nav__icon"></i></button>
+                        </div>
+                    </div>
+            </aside>
+            <div class="main-content page__main">
+                <form class="search-form main-content__search">
+                    <input class="input search-form__input" type="text" placeholder="Search for meals" />
+                    <div class="select search-form__select">
+                        <div class="select__label">All<i class="fas fa-chevron-down select__icon"></i></div>
+                        <ul class="select__dropdown dropdown dropdown--active">
+                            <li class="dropdown__group">
+                                <div class="dropdown__title">Rodzaj posiłku</div>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item">
+                                        <a href="" class="dropdown__link btn">Śniadania</a> </li>
+                                    <li class="dropdown__item dropdown__item--checked"><a href=""
+                                            class="dropdown__link btn">Obiady<i
+                                                class="fas fa-check dropdown__icon"></i></a>
+                                    </li>
+                                    <li class="dropdown__item"><a href="" class="dropdown__link btn">Desery</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown__group">
+                                <div class="dropdown__title">Czas przygotowania</div>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item"><a href="" class="dropdown__link btn">Krótki</a>
+                                    </li>
+                                    <li class="dropdown__item dropdown__item--checked"><a href=""
+                                            class="dropdown__link btn">Średni<i
+                                                class="fas fa-check dropdown__icon"></i></a>
+                                    </li>
+                                    <li class="dropdown__item"><a href="" class="dropdown__link btn">Długi</a> </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown__group">
+                                <div class="dropdown__title">Inne kryteria</div>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item"><a href="" class="dropdown__link btn">Keto</a> </li>
+                                    <li class="dropdown__item dropdown__item--checked"><a href=""
+                                            class="dropdown__link btn">Wege<i
+                                                class="fas fa-check dropdown__icon"></i></a>
+                                    </li>
+                                    <li class="dropdown__item"><a href="" class="dropdown__link btn">Vegan</a></li>
+                                    <li class="dropdown__item dropdown__item--checked"><a href=""
+                                            class="dropdown__link btn">Bez fruktozy<i
+                                                class="fas fa-check dropdown__icon"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <input class="btn btn--bg-primary search-form__btn" type="submit" value="Search" />
+                </form>
+                <div class="main-content__header">
+                    <h3 class="hd-m">Wybrane losowo dla Ciebie</h3>
+                </div>
+                <div class="main-content__cards cards">
+                    <ul class="cards__list">
+                        <li class="cards__item">
+                            <div class="card card--expanded">
+                                <div class="card__aside">Ostatnio zaplanowane 2 tygodnie temu</div>
+                                <div class="card__header">
+                                    <h2 class="card__title">Wołowinka polana sosem grzybkowym z kopytkami</h2>
+                                    <div class="card__subtitle">Śniadania, desery, keto, wegańskie</div>
+                                </div>
+                                <div class="card__buttons-list">
+                                    <a class="btn btn--secondary card__btn"><span
+                                            class="card__icon">+</span>ZAPLANUJ</a>
+                                    <a class="btn btn--grey card__btn"><i
+                                            class="fas fa-pencil-alt card__icon card__icon--fa"></i>EDYTUJ</a>
+                                    <a class="btn btn--primary card__btn"><i
+                                            class="fas fa-arrow-right card__icon card__icon--fa"></i>URL</a>
+                                </div>
+                            </div>
                         </li>
-                        <li class="select__item">Desery </li>
+                        <li class="cards__item">
+                            <div class="card card--expanded">
+                                <div class="card__aside">Ostatnio zaplanowane 2 tygodnie temu</div>
+                                <div class="card__header">
+                                    <h2 class="card__title">Wołowinka polana sosem grzybkowym z kopytkami</h2>
+                                    <div class="card__subtitle">Śniadania, desery, keto, wegańskie</div>
+                                </div>
+                                <div class="card__buttons-list">
+                                    <a class="btn btn--secondary card__btn"><span
+                                            class="card__icon">+</span>ZAPLANUJ</a>
+                                    <a class="btn btn--grey card__btn"><i
+                                            class="fas fa-pencil-alt card__icon card__icon--fa"></i>EDYTUJ</a>
+                                    <a class="btn btn--primary card__btn"><i
+                                            class="fas fa-arrow-right card__icon card__icon--fa"></i>URL</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cards__item">
+                            <div class="card card--expanded">
+                                <div class="card__aside">Ostatnio zaplanowane 2 tygodnie temu</div>
+                                <div class="card__header">
+                                    <h2 class="card__title">Wołowinka polana sosem grzybkowym z kopytkami</h2>
+                                    <div class="card__subtitle">Śniadania, desery, keto, wegańskie</div>
+                                </div>
+                                <div class="card__buttons-list">
+                                    <a class="btn btn--secondary card__btn"><span
+                                            class="card__icon">+</span>ZAPLANUJ</a>
+                                    <a class="btn btn--grey card__btn"><i
+                                            class="fas fa-pencil-alt card__icon card__icon--fa"></i>EDYTUJ</a>
+                                    <a class="btn btn--primary card__btn"><i
+                                            class="fas fa-arrow-right card__icon card__icon--fa"></i>URL</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cards__item">
+                            <div class="card card--expanded">
+                                <div class="card__aside">Ostatnio zaplanowane 2 tygodnie temu</div>
+                                <div class="card__header">
+                                    <h2 class="card__title">Wołowinka polana sosem grzybkowym z kopytkami</h2>
+                                    <div class="card__subtitle">Śniadania, desery, keto, wegańskie</div>
+                                </div>
+                                <div class="card__buttons-list">
+                                    <a class="btn btn--secondary card__btn"><span
+                                            class="card__icon">+</span>ZAPLANUJ</a>
+                                    <a class="btn btn--grey card__btn"><i
+                                            class="fas fa-pencil-alt card__icon card__icon--fa"></i>EDYTUJ</a>
+                                    <a class="btn btn--primary card__btn"><i
+                                            class="fas fa-arrow-right card__icon card__icon--fa"></i>URL</a>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <input class="button search__submit" type="submit" value="Search" />
-            </form>
+            </div>
         </div>
+
         <footer class="footer page__footer">
             <div class="footer__inner">
-                <div class="copyright">
-                    <p class="copyright__text copyright__text--size_s">copyright</p>
-                    <p class="copyright__text">lazy kiczen inc</p>
-                </div>
+                <div class="footer__text footer__text--size_s">copyright</div>
+                <div class="footer__text">lazy kiczen inc</div>
             </div>
         </footer>
     </div>

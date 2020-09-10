@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <title>Edit Profile - Lazy Kiczen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/lcp4pfy.css">
+    <script src="https://kit.fontawesome.com/296ac1e1a4.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="page page--layout-profile bg">
+    <div class="page__inner">
+        <div class="page__grid">
+            <header class="header header--actve page__header">
+                <div class="header__inner">
+                    <div class="header__logo logo"><a href="index.html" class="logo__link"><img alt="logo"
+                                src="../assets/images/logo.png" class="logo__img"></a></div>
+                    <a class="btn header__btn"><i class="fas fa-bars nav__icon"></i></a>
+
+
+                    <nav class="nav header__nav nav--mobile">
+
+                        <ul class="nav__list">
+                            <li class="nav__item"> <a href="recipes.html" class="nav__link  btn">Twoje
+                                    przepisy</a></li>
+                            <li class="nav__item"> <a href="add_new.html" class="nav__link btn">Dodaj
+                                    przepis</a></li>
+                            <li class="nav__item"> <a href="#" class="nav__link btn">Twoje
+                                    konto<i class="fas fa-chevron-down btn__icon btn__icon--primary"></i></a>
+                                <ul class="nav__list nav__dropdown dropdown dropdown--active">
+                                    <li class="nav__item dropdown__item"><a href="profile.html"
+                                            class="dropdown__link btn">Twój profil</a>
+                                    </li>
+                                    <li class="nav__item dropdown__item"><a href="plans.html"
+                                            class="dropdown__link btn">Twoje plany</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item"><a href="login.html" class="nav__link btn">Wyloguj</a></li>
+                        </ul>
+
+                    </nav>
+                    <nav class="header__nav nav nav--desktop">
+                        <ul class="nav__list">
+                            <li class="nav__item"> <a href="recipes.html" class="nav__link btn"><i
+                                        class="fas fa-book  btn__icon btn__icon--primary"></i>Recipes</a></li>
+                            <li class="nav__item"> <a href="add_new.html" class="nav__link btn"><i
+                                        class="fas fa-plus btn__icon btn__icon--secondary"></i>Add new</a></li>
+                            <li class="nav__item--dropdown"> <a class="nav__link btn btn--bg-white"><i
+                                        class="fas fa-user-alt btn__icon btn__icon--accent"></i>Account<i
+                                        class="fas fa-chevron-down btn__icon"></i></a>
+                                <ul class="dropdown dropdown--actve nav__dropdown">
+                                    <li class="dropdown__item"><a href="profile.html" class="dropdown__link btn">Twój
+                                            profil</a></li>
+                                    <li class="dropdown__item"><a href="plans.html" class="dropdown__link btn">Twoje
+                                            plany</a></li>
+                                    <li class="dropdown__item"><a href="login.html"
+                                            class="dropdown__link btn">Wyloguj</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </header>
+            <aside class="aside page__aside">
+                <div class="aside__item aside-nav">
+                    <div class="aside-nav__inner">
+                        <ul class="aside-nav__list">
+                            <li class="aside-nav__item aside-nav__item--active">
+                                <a href="" class="aside-nav__link ">
+                                    Edit profile
+                                </a>
+                            </li>
+                            <li class="aside-nav__item">
+                                <a href="change_password.html" class="aside-nav__link">
+                                    Change password
+                                </a>
+                            </li>
+                            <li class="aside-nav__item">
+                                <a href="filters.html" class="aside-nav__link">
+                                    Your filters
+                                </a>
+                            </li>
+                            <li class="aside-nav__item">
+                                <a href="stats.html" class="aside-nav__link">
+                                    Your stats
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <div class="main-content main-content--layout-profile page__main">
+                <div class="main-content__header">
+                    <h3 class="hd-m">Edit Profile</h3>
+                </div>
+                <form class="form main-content__form">
+                    <div class="form__inner">
+                        <div class="form__group">
+                            <label class="form__label">Name</label>
+                            <input type="text" class="input input--has-border" placeholder="Add your name"
+                                value="Peggy">
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label">Email</label>
+
+                            <input type="email" class="input input--has-border" placeholder="Add your email address"
+                                value="peggy.olson@sterlingcooper.com">
+                        </div>
+                        <div class="form__btns form__btns--align-left">
+                            <input type="submit" class="btn btn--bg-primary" value="Aktualizuj">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer page__footer">
+            <div class="footer__inner">
+                <div class="footer__text footer__text--size_s">copyright</div>
+                <div class="footer__text">lazy kiczen inc</div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

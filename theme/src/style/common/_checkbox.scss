@@ -1,0 +1,95 @@
+@import '../utilities/module';
+
+
+.checkbox {
+    position: relative;
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        display: flex;
+        padding-left: 1.5rem;
+        cursor: pointer;
+
+        //create custom empty checkbox
+        &:before {
+            display: block;
+            content: "";
+            height: 12px;
+            width: 12px;
+            border: 1px solid $dark;
+            border-radius: 20%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 0.3s;
+
+        }
+    }
+
+    &:hover, &:active, &:focus {
+        .checkbox__label:before {
+            background-color: $lightgrey;
+        }
+    }
+
+    //when checked change custom checkbox color
+    &__input:checked+&__label:before {
+        border-color: $primary-color;
+        background-color: $primary-color;
+    }
+
+    //when checked add checkmark
+    &__input:checked+&__label:after {
+        display: block;
+        content: "";
+        height: 8px;
+        width: 3px;
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(40deg);
+    }
+
+    &--btn-style {
+        .checkbox__label {
+            display: inline-block;
+            padding: $small-padding;
+            border-radius: 20px;
+            box-shadow: $light-shadow;
+            border: 2px solid transparent;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.2s ease-in;
+
+            &:hover {
+                background-color: darken(white, 2%);
+            }
+        }
+
+        &:last-child {
+            .checkbox__label {
+                margin-right: 0;
+            }
+        }
+
+        // btn style checkbox - border and font color change when checked
+        .checkbox__input:checked+.checkbox__label {
+            border: 2px solid $primary-color;
+            color: $primary-color;
+        }
+
+        // 
+        .checkbox__label:before {
+            content: none;
+        }
+
+        .checkbox__input:checked+.checkbox__label:after {
+            content: none;
+        }
+    }
+}

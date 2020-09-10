@@ -1,0 +1,47 @@
+@import '../utilities/module';
+
+.table {
+    border-collapse: collapse;
+    padding: 0 0.5rem;
+
+    th, td {
+        color: $dark-grey;
+        font-weight: normal;
+        text-align: right;
+        vertical-align: center;
+    }
+
+    th {
+        padding: 1rem 0.5rem;
+    }
+
+    td {
+        padding: 0.5rem;
+        text-align: right;
+    }
+
+    thead {
+        th:first-child {
+            color: $dark;
+            font-weight: bold;
+            text-align: left;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $grey;
+        }
+
+        td {
+            &:not(:first-child) {
+                font-weight: bold;
+            }
+
+            &:first-child {
+                text-align: left;
+                color: $dark;
+            }
+        }
+    }
+}

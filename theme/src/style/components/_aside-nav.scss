@@ -1,0 +1,127 @@
+@import '../utilities/module';
+
+.aside-nav {
+
+    border-bottom: 1px solid $grey;
+    box-shadow: $light-shadow;
+
+
+    &__inner {
+        padding: 0.5rem 0.5rem 0;
+        overflow: hidden;
+        width: 100vw;
+    }
+
+    &__list {
+        display: flex;
+        overflow-x: auto;
+        -ms-overflow-style: none; // IE and Edge 
+        scrollbar-width: none; //Firefox 
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__item {
+        margin-right: 1.5rem;
+
+        &--active {
+            // color: $primary-color;
+            // border-bottom: 3px solid $primary-color;
+
+            position: relative;
+
+            .aside-nav__link {
+                color: $primary-color;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: calc(100% - 40px);
+                margin: 0 20px;
+                height: 3px;
+                background-color: $primary-color;
+                border-radius: 10%;
+                ;
+            }
+        }
+
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        white-space: nowrap;
+        padding: 1rem;
+        display: block;
+        color: $dark-grey;
+    }
+}
+
+@media(min-width: $large-breakpoint) {
+    .aside-nav {
+        box-shadow: none;
+        border-bottom: 0;
+
+        &__inner {
+            width: auto;
+            padding: 0.5rem 0;
+
+        }
+
+        &__list {
+            flex-direction: column;
+        }
+
+        &__item {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            margin-right: 0;
+            width: 232px;
+
+            &--active {
+                background-color: $lightgrey;
+
+                .aside-nav__link {
+                    font-weight: bold;
+                    color: $dark;
+
+                }
+
+                &::before {
+                    content: none;
+                }
+
+                &::after {
+                    display: block;
+                    position: absolute;
+                    content: "";
+                    left: 100%;
+                    width: 0;
+                    height: 0;
+                    border-left: 12px solid $lightgrey;
+                    border-top: 12px solid transparent;
+                    border-bottom: 12px solid transparent;
+                    border-right: 0;
+                    margin: 0;
+                    top: calc(50% - 12px);
+                }
+            }
+
+            &:hover {
+                background-color: $lightgrey;
+            }
+        }
+
+        &__link {
+            color: $dark;
+            font-size: $font-s;
+        }
+    }
+}

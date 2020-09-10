@@ -1,0 +1,24 @@
+twoje plany 
+
+pododawać atrybuty do elementów, np. inputy - maxlength etc. img, a 
+custom scrollbar on textarea
+
+img - alt
+a - title
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+https://isobar-us.github.io/code-standards/
+
+a nad dropdown powinien być buttonem
+
+ASIDE__ITEM >> ASIDE_INNER
+
+czasem xxx__btns
+czasem xxx__buttons-list  - ujednolicić
+
+cards__title powinno mieć hd dla rozmiaru
+
+dodać aria-label do x
+
+zmienić x na times
+
+size-s, size-small >> size-sm

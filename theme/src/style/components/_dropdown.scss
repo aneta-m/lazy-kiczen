@@ -4,9 +4,8 @@
     display: none;
 
 
-    &__item {
+    &__link {
         color: $grey;
-
     }
 
     &--active {
@@ -18,22 +17,64 @@
 @media (min-width: $large-breakpoint) {
     .dropdown {
         background-color: white;
-        display: grid;
+        display: none;
         padding: 0.5rem;
         border-radius: 0.5rem;
-        width: 100%;
+        box-shadow: $light-shadow;
+        min-width: 100%;
+
+        * {
+            white-space: nowrap;
+        }
+
+        &--active {
+            display: grid;
+            z-index: 1;
+        }
 
         &__item {
-            padding: 0.5rem;
             border-bottom: 1px solid $lightgrey;
-            text-align: center;
-            color: $dark;
 
             &:last-child {
                 border-bottom: none;
             }
+
+            &--checked {
+                position: relative;
+
+                .dropdown__icon {
+                    display: block;
+                }
+            }
         }
 
+        &__link {
+            color: $dark;
+            padding: 0.5rem;
+            text-align: center;
+            display: block;
+        }
 
+        &__group {
+            .dropdown__item {
+                border-bottom: none;
+            }
+        }
+
+        &__title {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        &__icon {
+            display: none;
+            position: absolute;
+            top: 0.5rem;
+            right: 0;
+        }
     }
+
+
 }

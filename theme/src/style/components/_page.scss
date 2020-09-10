@@ -1,37 +1,152 @@
 @import '../utilities/module';
 
 .page {
-    background-color: #eee;
-    background-image:
-        linear-gradient(transparent, white 70vh),
-        linear-gradient(45deg, $lightgrey 25%, transparent 25%, transparent 75%, $lightgrey 75%, $lightgrey),
-        linear-gradient(45deg, $lightgrey 25%, transparent 25%, transparent 75%, $lightgrey 75%, $lightgrey), ;
-    background-size: auto, 30px 30px, 30px 30px;
-    background-position: 0 0, 0 0, 15px 15px;
-
     &__inner {
         min-height: 100vh;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: 1fr auto;
+    }
+
+    &__grid {
+        display: grid;
+        gap: 1rem;
+        width: 100vw;
+    }
+
+    &__aside {
+        max-width: 400px;
+        margin: 0.5rem;
+        // width: 100%;
+    }
+
+    &__main {
+        padding: 0 0.5rem;
+    }
+
+    &__modal {
+        padding: 0 0.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    &--prevent-scroll {
+        overflow: hidden;
+    }
+
+    &--layout-simple {
+        .page__main {
+            display: none;
+        }
+    }
+
+    &--layout-centered {
+        .page__inner {
+            grid-template-rows: auto 1fr auto;
+        }
+    }
+
+    &--layout-profile {
+        .page__grid {
+            grid-template-rows: auto auto 1fr;
+        }
+
+        .page__aside {
+            box-shadow: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: transparent;
+            max-width: none;
+        }
+    }
+
+    &--layout-no-aside {
+        .page {
+            &__main {}
+        }
     }
 }
 
 @media (min-width: $large-breakpoint) {
     .page {
-        &__inner {
+        &__grid {
             max-width: $xl-breakpoint;
             margin: auto;
-            display: grid;
+            margin-top: 0;
             grid-template-columns: auto 1fr;
-            grid-gap: 1rem;
             align-content: start;
+            padding-bottom: 4rem;
+            width: 100%;
+            column-gap: 3.5rem;
+            row-gap: 2rem;
+            height: 100%;
+            grid-template-rows: auto 1fr;
         }
 
         &__header {
             grid-column: 1/-1;
         }
 
-        &__footer {
-            grid-column: 1/-1;
+        &__aside {
+            margin: 0;
+            width: 232px;
+        }
+
+        &__main {
+            padding: 0;
+        }
+
+        &__modal {
+            width: 100vw;
+        }
+
+        &--layout-simple {
+            .page__main {
+                display: block;
+            }
+        }
+
+        &--layout-profile {
+            .page__grid {
+                grid-column-gap: 0;
+            }
+
+            .page__aside {
+                background-color: white;
+                padding-top: 1rem;
+                border-top-right-radius: 0;
+                width: calc(232px + 1rem);
+            }
+
+            .page__main {
+                padding-top: 1rem;
+                padding-left: 2.5rem;
+            }
+        }
+
+        &--layout-no-aside {
+            .page {
+                &__grid {
+                    grid-template-columns: 1fr;
+                }
+            }
         }
 
     }
+}
+
+@media (min-width: $xl-breakpoint) {
+    .page {
+        &--layout-centered {
+            .page__header {
+                width: $xl-breakpoint;
+                margin: auto;
+            }
+        }
+    }
+
 }

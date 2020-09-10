@@ -1,0 +1,29 @@
+Podstrona 1: Sign up/ Log in
+
+Podstrona 2: Twój profil
+
+Dane konta: 
+Imię*, adres e-mail*, hasło* , telefon* 
+*zmień 
+
+Personalizuj konto
+Filtry:
+Rodzaj posiłku usuń/edytuj
+Czas przygotowania usuń/edytuj
+Inne kategorie usuń/edytuj
+Dodaj nową kategorię
+
+Statystyki:
+Najpopularniejsze przepisy
+Najpopularniejsze kategorie
+Najlepiej ocenione
+
+Podstrona 3: Twoje plany
+
+Widok miesiąca:
+na górze: tytuł jaki to mc z ikonką  kalendarza i przewijanie, np. < sierpień 2020 > + guzik current month 
+poniżej: 4-5 planerów z tytułami jaki to tydzień
+
+
+
+
