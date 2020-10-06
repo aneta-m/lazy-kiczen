@@ -1,0 +1,64 @@
+[
+    {
+        "categoryId": "1",
+        "categoryName": "meal type",
+        "list": [
+            {
+                "id": "1",
+                "name": "breakfast"
+            },
+            {
+                "id": "2",
+                "name": "dinner"
+            },
+            {
+                "id": "3",
+                "name": "dessert"
+            },
+            {
+                "id": "4",
+                "name": "soup"
+            }
+        ]
+    },
+    {
+        "categoryId": "2",
+        "categoryName": "preparation time",
+        "list": [
+            {
+                "id": "1",
+                "name": "short"
+            },
+            {
+                "id": "2",
+                "name": "medium"
+            },
+            {
+                "id": "3",
+                "name": "long"
+            }
+        ]
+    },
+    {
+        "categoryId": "3",
+        "categoryName": "health & diets",
+        "list": [
+            {
+                "id": "1",
+                "name": "vegan"
+            },
+            {
+                "id": "2",
+                "name": "vegetarian"
+            },
+            {
+                "id": "3",
+                "name": "keto"
+            },
+            {
+                "id": "4",
+                "name": "fructose-free"
+            }
+        ]
+    }
+]

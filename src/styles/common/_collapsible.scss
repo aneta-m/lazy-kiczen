@@ -1,0 +1,16 @@
+@import '../utilities/module';
+
+.collapsible {
+    background-color: $primary-color;
+
+    &__content {
+        display: none;
+        background-color: $secondary-color;
+    }
+
+    &--isOpen {
+        .collapsible__content {
+            display: block;
+        }
+    }
+}

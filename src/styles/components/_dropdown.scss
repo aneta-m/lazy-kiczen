@@ -1,0 +1,24 @@
+@import '../utilities/module';
+
+.dropdown {
+    position: relative;
+    display: block;
+
+    &__content {
+        display: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: $light-shadow;
+        min-width: 100%;
+        background-color: white;
+        z-index: 1;
+        position: absolute;
+        top: 100%;
+    }
+
+    &--isOpen {
+        .dropdown__content {
+            display: grid;
+        }
+    }
+}

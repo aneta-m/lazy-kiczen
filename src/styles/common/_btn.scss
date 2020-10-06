@@ -1,0 +1,200 @@
+.btn {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-main;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: $dark;
+    transition: 0.2s;
+    padding: 12px 24px;
+    border-radius: 25px;
+    display: block;
+    outline: white;
+
+    &:hover, &:focus, &:active {
+        color: lighten($dark, 30%);
+
+        .btn__icon {
+
+            &--primary {
+                color: lighten($primary-color, 15%);
+            }
+
+            &--secondary {
+                color: lighten($secondary-color, 15%);
+            }
+
+            &--accent {
+                color: lighten($accent-color, 15%);
+            }
+
+            &--grey {
+                color: darken($grey, 15%);
+            }
+        }
+    }
+
+    // TYPES
+
+    &--primary {
+        background-color: $primary-color;
+        color: white;
+
+        &:hover, &:focus, &:active {
+            color: darken(white, 2%);
+            background-color: lighten($primary-color, 15%);
+        }
+    }
+
+    &--grey {
+        background-color: $lightgrey;
+        color: $dark;
+
+        &:hover, &:focus, &:active {
+            background-color: $grey;
+            color: white;
+        }
+    }
+
+    &--white {
+        background-color: white;
+        color: $dark;
+        box-shadow: $light-shadow;
+
+
+        &:hover, &:focus, &:active {
+            background-color: darken(white, 1%);
+        }
+    }
+
+    &--text-primary {
+        border-radius: 0;
+        color: $primary-color;
+
+        &:hover {
+            color: lighten($primary-color, 15%);
+        }
+    }
+
+    &--text-secondary {
+        border-radius: 0;
+        color: $secondary-color;
+
+        &:hover {
+            color: lighten($secondary-color, 15%);
+        }
+    }
+
+    &--text-grey {
+        border-radius: 0;
+        color: $grey;
+
+        &:hover {
+            color: lighten($grey, 10%);
+        }
+    }
+
+    &--bg-white {
+        background-color: white;
+        border-radius: 0;
+
+        &:hover, &:focus, &:active {
+            background-color: darken(white, 1%);
+        }
+    }
+
+    //PADDING OPTIONS
+
+    &--no-padding {
+        padding: 0;
+    }
+
+    &--padding-none {
+        padding: 0;
+    }
+
+    &--padding-sm {
+        padding: 0.5rem;
+    }
+
+    &--padding-md {
+        padding: 1rem;
+    }
+
+    &--padding-lg {
+        padding: 1rem 2.5rem;
+    }
+
+    &--padding-tall {
+        padding: 1rem 0.5rem;
+    }
+
+    //SIZE
+
+    &--full-width {
+        display: block;
+        width: 100%;
+    }
+
+    //TEXT
+
+    &--style-bold {
+        font-weight: bold;
+    }
+
+    &--text-bold {
+        font-weight: bold;
+    }
+
+    &--align-left {
+        text-align: left;
+    }
+
+    &--has-2-icons {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 0.5rem;
+    }
+
+    &__icon {
+        font-size: 16px;
+        padding: 0 0.5rem;
+
+        &--primary {
+            color: $primary-color;
+        }
+
+        &--secondary {
+            color: $secondary-color;
+        }
+
+        &--accent {
+            color: $accent-color;
+        }
+
+        &--grey {
+            color: $grey;
+        }
+
+        &--padding-right {
+            padding: 0 0.25rem 0 0;
+        }
+
+        &--padding-left {
+            padding: 0 0 0 0.25rem;
+        }
+
+        &--size-sm {
+            font-size: 0.75rem;
+        }
+
+        &--size-md {
+            font-size: 14px;
+        }
+
+        &--size-lg {
+            font-size: 1.5rem;
+        }
+    }
+}

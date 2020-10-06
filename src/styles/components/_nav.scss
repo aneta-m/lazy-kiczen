@@ -1,0 +1,126 @@
+@import '../utilities/module';
+
+.nav {
+
+    &--desktop {
+        display: none;
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+    }
+
+    &__list {
+        padding: 1rem;
+        margin: 0;
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__dropdown {
+        padding-bottom: 0;
+    }
+
+
+    &--layout-simple {
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .nav__title {
+            margin: 1.5rem auto;
+            text-align: center;
+        }
+
+        .nav__list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 0;
+        }
+
+        .nav__item {
+            width: 80%;
+            max-width: 300px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+
+        .nav__link {
+            display: block;
+            background-color: white;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            border-radius: 25px;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+
+            &--emphasized {
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: $large-breakpoint) {
+
+
+    .nav {
+        &--desktop {
+            display: block;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
+        &--layout-simple {
+            display: none;
+        }
+
+        &__list {
+            grid-template-columns: auto auto auto;
+            padding: 0;
+            gap: 0;
+        }
+
+        &__item {
+            &--dropdown {
+                position: relative;
+            }
+
+            &--left-margin {
+                margin-left: 1rem;
+            }
+        }
+
+
+
+        &__link {
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+
+            &--emphasized {
+                padding: 0.75rem 2.5rem;
+                border-radius: 25px;
+                margin-left: 1rem;
+            }
+        }
+
+        &__dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import '../utilities/module';
+
+
+.hd {
+    font-weight: bold;
+
+    &-xl {
+        @extend .hd;
+        font-size: $font-xl;
+    }
+
+    &-l {
+        @extend .hd;
+        font-size: $font-l;
+    }
+
+    &-m {
+        @extend .hd;
+        font-size: $font-m;
+
+        &--weight-normal {
+            font-weight: normal;
+        }
+    }
+
+    &-s {
+        @extend .hd;
+        font-size: $font-s;
+    }
+
+    &-xs {
+        @extend .hd;
+        font-size: $font-xs;
+    }
+
+    &--light {
+        color: $dark-grey;
+        font-weight: normal;
+    }
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.text {
+    &--capitalize {
+        text-transform: capitalize;
+    }
+}

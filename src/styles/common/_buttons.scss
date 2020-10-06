@@ -1,0 +1,197 @@
+// @import '../utilities/module';
+
+
+
+
+
+// .btn {
+//     text-decoration: none;
+//     font-family: 'Roboto', sans-serif;
+//     font-size: $font-main;
+//     text-align: center;
+//     background-color: transparent;
+//     border: none;
+//     cursor: pointer;
+//     color: $dark;
+//     transition: 0.2s;
+
+
+//     &--bg-white {
+//         background-color: white;
+//         border-radius: 20px;
+//         box-shadow: $light-shadow;
+
+//         &:hover, &:focus, &:active {
+//             background-color: darken(white, 2%);
+
+//         }
+//     }
+
+//     &--bg-grey {
+//         background-color: $lightgrey;
+//         border-radius: 20px;
+//         box-shadow: $light-shadow;
+//         color: $dark;
+//         padding: $small-padding;
+
+
+//         &:hover, &:focus, &:active {
+//             background-color: $grey;
+//             color: white;
+//         }
+//     }
+
+//     &--bg-primary {
+//         background-color: $primary-color;
+//         color: white;
+//         padding: $small-padding;
+//         border-radius: 20px;
+//         box-shadow: $light-shadow;
+
+
+//         &:hover, &:focus, &:active {
+//             color: darken(white, 2%);
+//             background-color: lighten($primary-color, 15%);
+//         }
+//     }
+
+//     &--has-icon-left {
+//         display: flex;
+//         align-items: center;
+//         height: 100%;
+//         padding: 1rem 0;
+
+//         .btn__icon {
+//             font-size: 30px;
+//             line-height: 0;
+//             padding-left: 0;
+//         }
+//     }
+
+//     // &--has-icon-right {
+//     //     display: flex;
+//     //     align-items: center;
+//     //     height: 100%;
+//     //     padding: 0.5rem 0;
+
+//     //     .btn__icon {
+//     //         font-size: 30px;
+//     //         line-height: 0;
+//     //         padding-right: 0;
+//     //     }
+//     // }
+
+
+//     &--type-expandable {
+//         color: $secondary-color;
+//         background-color: white;
+//         width: 2rem;
+//         max-width: 2rem;
+//         height: 2rem;
+//         line-height: 2rem;
+//     }
+
+//     &:hover, &:focus, &:active {
+//         color: lighten($dark, 30%);
+
+
+//     }
+
+//     &--flex {
+//         display: flex;
+//         align-items: center;
+//         padding: 0.25rem 0.75rem;
+
+//         .btn__text {
+//             padding-right: 0.5rem;
+//         }
+
+//         .btn__icon {
+//             color: $grey;
+//         }
+//     }
+
+//     &__expanded-text {
+//         display: none;
+//     }
+
+//     @include color-modifiers;
+
+//     &__icon {
+//         padding: 0 0.5rem;
+
+//         &--primary {
+//             color: $primary-color;
+//         }
+
+//         &--secondary {
+//             color: $secondary-color;
+//         }
+
+//         &--accent {
+//             color: $accent-color;
+//         }
+
+//         &--rotated {
+//             transform: rotate(45deg);
+//             display: block;
+//         }
+
+//         &--close {
+//             transform: rotate(45deg);
+//             display: block;
+//             font-family: arial;
+//             font-size: $font-m;
+//             padding: 0;
+//         }
+//     }
+// }
+
+
+// @media(min-width: $large-breakpoint) {
+//     .btn {
+//         &--bg-primary {
+//             padding: $normal-padding;
+//         }
+
+//         &--bg-grey {
+//             padding: $normal-padding;
+//         }
+
+//         &__expanded-text {
+//             width: 0;
+//             height: 0;
+//             max-width: 0;
+//             color: white;
+//             transition: 1s ease;
+//             overflow: hidden;
+//             display: block;
+//         }
+
+//         &--type-expandable {
+//             display: flex;
+//             border-radius: 50%;
+//             transition: max-width 0.1s ease;
+//             transition: background-color 0.2s ease;
+//             white-space: nowrap;
+//             padding: 0 0.75rem;
+//             align-items: center;
+//             justify-content: center;
+
+//             &:hover {
+//                 background-color: darken(white, 2%);
+//                 max-width: 10rem;
+//                 width: auto;
+//                 border-radius: 20px;
+
+//                 .btn__expanded-text {
+//                     height: auto;
+//                     width: auto;
+//                     max-width: 9rem;
+//                     color: $secondary-color;
+//                     margin-left: 0.5rem;
+//                 }
+//             }
+//         }
+//     }
+// }
