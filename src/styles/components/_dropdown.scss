@@ -5,7 +5,7 @@
     display: block;
 
     &__content {
-        display: none;
+        display: grid;
         padding: 0.5rem;
         border-radius: 0.5rem;
         box-shadow: $light-shadow;
@@ -14,11 +14,5 @@
         z-index: 1;
         position: absolute;
         top: 100%;
-    }
-
-    &--isOpen {
-        .dropdown__content {
-            display: grid;
-        }
     }
 }

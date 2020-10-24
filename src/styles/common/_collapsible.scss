@@ -1,16 +1,55 @@
 @import '../utilities/module';
 
 .collapsible {
-    background-color: $primary-color;
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s;
 
-    &__content {
+    &__top-content {
+        height: 0;
+        overflow: hidden;
+        transition: 0.25s;
+        visibility: hidden;
+    }
+
+
+    &__main-content {
+        height: 0;
+        overflow: hidden;
+        transition: 0.25s;
+    }
+
+    &__btn {
         display: none;
-        background-color: $secondary-color;
     }
 
     &--isOpen {
-        .collapsible__content {
+        .collapsible__top-content {
+            height: 2rem;
+            visibility: visible;
+        }
+    }
+}
+
+@media(min-width: $medium-breakpoint) {
+    .collapsible {
+        &__btn {
             display: block;
+            position: absolute;
+            top: 50%;
+            right: 0.5rem;
+            transform: translateY(-50%);
+            z-index: 1;
+            transition: 0.25s;
+        }
+
+        &--isOpen {
+
+            .collapsible__btn {
+                // top: auto;
+                bottom: 0;
+                transform: none;
+            }
         }
     }
 }

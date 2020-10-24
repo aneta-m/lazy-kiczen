@@ -1,22 +1,19 @@
 import React from 'react';
-import Card from '../Card/Card';
+import RecipeCard from '../RecipeCard/RecipeCard';
+
+
 
 
 const Cards = ({ cardsList, type, title, isExpandable, layout }) => {
+    let ComponentName = (type === "recipe") ? RecipeCard : "Card";
+
     const cardComponentsList = cardsList.map(item => (
         <li className="cards__item" key={item.id}>
-            <Card
+            <ComponentName
                 isExpandable={isExpandable}
-                layout={layout}
-                type={type}
-                item={{
-                    aside: item.asideText,
-                    name: item.title,
-                    labels: item.categories,
-                    url: item.url
-                }}
+                item={item}
             >
-            </Card>
+            </ComponentName>
         </li>
     ));
 

@@ -6,8 +6,7 @@ import Button from '../../common/Button/Button';
 
 const Nav = () => {
 
-    const dropdownBtn = <button className="btn btn--white btn--padding-tall"><i
-        className="fas fa-user-alt  btn__icon btn__icon--accent"></i>Account<i className="fas fa-chevron-down btn__icon btn__icon--size-md"></i></button>;
+    const dropdownBtn = { type: "white", padding: "md", leftIcon: "fas fa-user-alt", leftIconType: "accent", text: "Account" };
 
     return (
         <Fragment>
@@ -18,7 +17,7 @@ const Nav = () => {
                     <li className="nav__item"> <a href="add_new" className="btn btn--align-left">Dodaj
                                     przepis</a></li>
                     <li className="nav__item">
-                        <Dropdown type="mobileNav" />
+                        {/* <Dropdown type="mobileNav" /> */}
                     </li>
                     <li className="nav__item"><a href="login" className="btn btn--align-left">Wyloguj</a></li>
                 </ul>
@@ -26,20 +25,18 @@ const Nav = () => {
             <nav className="header__nav nav nav--desktop">
                 <ul className="nav__list">
                     <li className="nav__item">
-                        {/* <a href="recipes" className="btn btn--padding-tall"><i
-                        className="fas fa-book  btn__icon btn__icon--primary"></i>Recipes</a> */}
-                        <Button href="recipes" padding="tall" leftIcon="fas fa-book" leftIconType="primary">Recipes</Button>
-
+                        <Button href="recipes" padding="md" leftIcon="fas fa-book" leftIconType="primary">Recipes</Button>
                     </li>
-                    <li className="nav__item"> <a href="add_new" className="btn btn--padding-tall"><i
-                        className="fas fa-plus btn__icon btn__icon--secondary"></i>Add new</a></li>
+                    <li className="nav__item">
+                        <Button href="add_new" padding="md" leftIcon="fas fa-plus" leftIconType="secondary">Add new</Button>
+                    </li>
                     <li className="nav__item--dropdown nav__item--left-margin">
                         <Dropdown renderBtn={dropdownBtn}>
                             <List type="underlined"
                                 listItems={
-                                    [<a href="profile.html" className="btn btn--padding-sm">Twój profil</a>,
-                                    <a href="plans.html" className="btn btn--padding-sm">Twoje plany</a>,
-                                    <a href="login.html" className="btn btn--padding-sm">Wyloguj</a>]}>
+                                    [{ component: <a href="profile.html" className="btn btn--padding-sm">Twój profil</a>, id: 1 },
+                                    { component: <a href="plans.html" className="btn btn--padding-sm">Twoje plany</a>, id: 2 },
+                                    { component: <a href="login.html" className="btn btn--padding-sm">Wyloguj</a>, id: 3 }]}>
                             </List>
                         </Dropdown>
                     </li>

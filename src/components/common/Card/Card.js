@@ -17,6 +17,7 @@ const Card = ({ isExpandable, hasEditableLabels, layout, type, item }) => {
     if (isExpandable) {
         return (
             <div className={`${classes} ${isOpen ? "card--expanded" : ""}`} onClick={handleClick}>
+
                 {item.aside ? <div className="card__aside">{item.aside}</div> : ""}
                 <div className="card__header">
                     <h2 className="card__title">{item.name}</h2>
@@ -29,14 +30,14 @@ const Card = ({ isExpandable, hasEditableLabels, layout, type, item }) => {
 
                 {type === "category" &&
                     <div className="card__buttons-list">
-                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus" leftIconPadding="right">DODAJ NOWĄ OPCJĘ</Button>
-                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-times" leftIconPadding="right">USUŃ KATEGORIĘ</Button>
+                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus" >DODAJ NOWĄ OPCJĘ</Button>
+                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-times" >USUŃ KATEGORIĘ</Button>
                     </div>}
                 {type === "listItem" &&
                     <div className="card__buttons-list">
-                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus" leftIconPadding="right">ZAPLANUJ</Button>
-                        <Button type="text-grey" padding="none" text="bold" leftIcon="fas fa-pencil-alt" leftIconPadding="right">EDYTUJ</Button>
-                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-arrow-right" leftIconPadding="right">URL</Button>
+                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus" >ZAPLANUJ</Button>
+                        <Button type="text-grey" padding="none" text="bold" leftIcon="fas fa-pencil-alt" >EDYTUJ</Button>
+                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-arrow-right" >URL</Button>
                     </div>}
             </div>
         );
@@ -70,14 +71,14 @@ const Card = ({ isExpandable, hasEditableLabels, layout, type, item }) => {
                     </div>}
                 {type === "category" &&
                     <div className="card__buttons-list">
-                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus" leftIconPadding="right">DODAJ NOWĄ OPCJĘ</Button>
-                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-times" leftIconPadding="right">USUŃ KATEGORIĘ</Button>
+                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus">DODAJ NOWĄ OPCJĘ</Button>
+                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-times">USUŃ KATEGORIĘ</Button>
                     </div>}
                 {type === "listItem" &&
                     <div className="card__buttons-list">
-                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus" leftIconPadding="right">ZAPLANUJ</Button>
-                        <Button type="text-grey" padding="none" text="bold" leftIcon="fas fa-pencil-alt" leftIconPadding="right">EDYTUJ</Button>
-                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-arrow-right" leftIconPadding="right">URL</Button>
+                        <Button type="text-secondary" padding="none" text="bold" leftIcon="fas fa-plus">ZAPLANUJ</Button>
+                        <Button type="text-grey" padding="none" text="bold" leftIcon="fas fa-pencil-alt">EDYTUJ</Button>
+                        <Button type="text-primary" padding="none" text="bold" leftIcon="fas fa-arrow-right">URL</Button>
                     </div>}
             </div>
         );

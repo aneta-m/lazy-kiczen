@@ -1,49 +1,51 @@
 @import '../utilities/module';
 
+.text {
+    color: $dark;
+    font-size: 14px;
 
-.hd {
-    font-weight: bold;
+    &--size {
+        &-sm {
+            font-size: 12px;
+        }
 
-    &-xl {
-        @extend .hd;
-        font-size: $font-xl;
-    }
+        &-l {
+            font-size: 16px;
+        }
 
-    &-l {
-        @extend .hd;
-        font-size: $font-l;
-    }
-
-    &-m {
-        @extend .hd;
-        font-size: $font-m;
-
-        &--weight-normal {
-            font-weight: normal;
+        &-xl {
+            font-size: 18px;
         }
     }
 
-    &-s {
-        @extend .hd;
-        font-size: $font-s;
+    &--color {
+        &-light {
+            color: $grey;
+        }
     }
 
-    &-xs {
-        @extend .hd;
-        font-size: $font-xs;
+    &--padding {
+        &-bottom {
+            padding-bottom: 1rem;
+
+            &-sm {
+                padding-bottom: 0.75rem;
+            }
+        }
+
+        &-top {
+            padding-top: 1rem;
+        }
+
+        &-y {
+            padding: 1rem 0;
+        }
     }
 
-    &--light {
-        color: $dark-grey;
-        font-weight: normal;
-    }
 
-    &--center {
-        text-align: center;
-    }
-}
 
-.text {
+
+
     &--capitalize {
         text-transform: capitalize;
     }

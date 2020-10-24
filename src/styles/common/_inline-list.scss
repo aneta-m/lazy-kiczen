@@ -1,0 +1,25 @@
+@import "../utilities/module";
+
+.inline-list {
+    display: flex;
+    flex-direction: row;
+
+    &__item {
+        &:not(:last-child) {
+            padding-right: 1rem;
+        }
+
+
+    }
+
+    &--has-separators {
+        .inline-list__item:not(:last-child) {
+            padding-right: 1rem;
+            border-right: 1px solid $lightgrey;
+        }
+
+        .inline-list__item:not(:first-child) {
+            padding-left: 1rem;
+        }
+    }
+}

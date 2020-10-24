@@ -1,25 +1,23 @@
 import React from 'react';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
-const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, rightIcon, leftIconType, rightIconType, leftIconSize, rightIconSize, leftIconPadding, rightIconPadding, handleClick, children, className }) => {
+const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, rightIcon, leftIconType, rightIconType, leftIconSize, rightIconSize, leftIconPadding, rightIconPadding, onClick, children, className }) => {
 
     let btnClasses = "btn";
     let leftIconElement = "";
     let rightIconElement = "";
 
     if (leftIcon) {
-        let leftIconClasses = `${leftIcon} btn__icon`;
+        let leftIconClasses = `${leftIcon} btn__icon btn__icon--padding-right`;
         leftIconType && (leftIconClasses += ` btn__icon--${leftIconType}`);
-        leftIconPadding && (leftIconClasses += ` btn__icon--padding-${leftIconPadding}`);
         leftIconSize && (leftIconClasses += ` btn__icon--size-${leftIconSize}`);
         leftIconElement = <i className={leftIconClasses}></i>;
     }
 
     if (rightIcon) {
-        let rightIconClasses = `${rightIcon} btn__icon`;
+        let rightIconClasses = `${rightIcon} btn__icon btn__icon--padding-left`;
         rightIconType && (rightIconClasses += ` btn__icon--${rightIconType}`);
-        rightIconPadding && (rightIconClasses += ` btn__icon--padding-${rightIconType}`);
-        rightIconSize && (rightIconClasses += ` btn__icon--size-${rightIconType}`);
+        rightIconSize && (rightIconClasses += ` btn__icon--size-${rightIconSize}`);
         rightIconElement = <i className={rightIconClasses}></i>;
     }
 
@@ -29,7 +27,7 @@ const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, right
     text && (btnClasses += ` btn--text-${text}`);
     contentAlign && (btnClasses += ` btn--align-${contentAlign}`);
     (leftIcon && rightIcon) && (btnClasses += ` btn--has-2-icons`);
-    className && (btnClasses += className);
+    className && (btnClasses += ` ${className}`);
 
     if (href) {
         return (
@@ -37,7 +35,7 @@ const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, right
         );
     }
     return (
-        <button className={btnClasses} onClick={handleClick}>{leftIconElement} {children} {rightIconElement}</button>
+        <button className={btnClasses} onClick={onClick}>{leftIconElement} {children} {rightIconElement}</button>
     );
 };
 export default Button;

@@ -5,7 +5,15 @@
     position: relative;
 
     &__input {
-        display: none;
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+
+        &:focus+.checkbox__label {
+            color: $accent-color;
+        }
     }
 
     &__label {
@@ -17,6 +25,10 @@
 
         &:hover {
             color: $grey;
+        }
+
+        &:focus {
+            border: 1px solid red;
         }
 
         //create custom empty checkbox

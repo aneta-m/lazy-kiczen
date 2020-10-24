@@ -10,7 +10,7 @@
     padding: 12px 24px;
     border-radius: 25px;
     display: block;
-    outline: white;
+    outline-color: $accent-color;
 
     &:hover, &:focus, &:active {
         color: lighten($dark, 30%);

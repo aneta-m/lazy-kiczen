@@ -1,6 +1,7 @@
 import React from 'react';
+import Checkbox from '../Checkbox/Checkbox';
 
-const List = ({ type, listItems, gaps }) => {
+const List = ({ type, listItems, groupId, gapsSize, itemsConvertType }) => {
     let classNames = "v-list";
 
     if (type === "centered") {
@@ -11,15 +12,15 @@ const List = ({ type, listItems, gaps }) => {
         classNames += " v-list--underlined";
     };
 
-    if (gaps) {
-        classNames += ` v-list--gaps-${gaps}`;
+    if (gapsSize) {
+        classNames += ` v-list--gaps-${gapsSize}`;
     }
-
-    const listContent = listItems.map((item) => <li className="v-list__item" key={item.id}>{item.component}</li>);
-
     return (
         <ul className={classNames}>
-            {listContent}
+            {listItems.map((item) => <li className="v-list__item" key={item.id}>
+                {(itemsConvertType === 'checkbox') && (<Checkbox name={item.name} groupId={groupId} type="transparent" />)}
+                {!itemsConvertType && (item.component)}
+            </li>)}
         </ul>
     );
 };

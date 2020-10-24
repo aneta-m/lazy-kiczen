@@ -1,0 +1,53 @@
+@import '../utilities/module';
+
+h1 {
+    font-size: $font-xl;
+}
+
+h2 {
+    font-size: $font-l;
+}
+
+h3 {
+    font-size: $font-m;
+}
+
+h4 {
+    font-size: $font-s;
+}
+
+h5 {
+    font-size: $font-xs;
+}
+
+.hd {
+    font-weight: bold;
+    color: $dark;
+
+    &--color-light {
+        color: $dark-grey;
+    }
+
+    &--weight-normal {
+        font-weight: normal;
+    }
+
+    &--align-center {
+        text-align: center;
+    }
+
+    &--padding {
+        &-bottom {
+            padding-bottom: 1rem;
+
+            &-sm {
+                padding-bottom: 0.75rem;
+            }
+
+            &-xs {
+                padding-bottom: 0.5rem;
+            }
+        }
+    }
+
+}
