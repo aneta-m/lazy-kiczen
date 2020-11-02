@@ -1,35 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
 import GrouppedList from '../GrouppedList/GrouppedList';
 import Button from '../Button/Button';
 
 const SearchForm = ({ hasSelect, selectList }) => {
 
-    //select List i filteredCategories są z globalState
+    //select List i filteredItems są z globalState
 
-    // zaktualizować stany checkboxów, żeby utrzymywały się dłużej, były zależne od state
-
-    const [filteredCategories, setFilteredCategories] = useState([]);
+    const [filteredItems, setFilteredItems] = useState([]);
     const [searchText, setSearchText] = useState("");
 
-    useEffect(() => console.log(filteredCategories));
 
-    const [categoriesMappedWithCheckedProp, setCategoriesMappedWithCheckedProp] = useState(mapCategoriesWithFilters(selectList, filteredCategories));
+    const categoriesMappedWithCheckedProp = mapCategoriesWithFilters(selectList, filteredItems);
+    const [categoriesMapped, setCategoriesMapped] = useState(categoriesMappedWithCheckedProp);
 
     function handleChange(e) {
         setSearchText(e.target.value);
     }
 
-    // po tym jak zrobie global state, trzeba przerobić funkcję, żeby miała filteredcategories i select list z global state
-
+    // po tym jak zrobie global state, trzeba przerobić funkcję, żeby miała filteredItems i select list z global state
     function handleCheckboxChange(item) {
-        const updatedFilters = updateFilteredCategories(filteredCategories, item);
+        const updatedFilters = updateFilteredItems(filteredItems, item);
         const updatedSelectList = mapCategoriesWithFilters(selectList, updatedFilters);
-        setFilteredCategories(updatedFilters);
-        setCategoriesMappedWithCheckedProp(updatedSelectList);
+        setFilteredItems(updatedFilters);
+        setCategoriesMapped(updatedSelectList);
     }
 
-    function updateFilteredCategories(filters, item) {
+    function updateFilteredItems(filters, item) {
         const { id, groupId } = item;
         const groupIndex = filters.findIndex(filterItem => filterItem.categoryId === groupId);
         return (
@@ -38,7 +35,9 @@ const SearchForm = ({ hasSelect, selectList }) => {
     }
 
     function addItem(filters, groupIndex, item) {
-        (groupIndex > -1 ? filters[groupIndex].categoryList.push(item.id) : filters.push({ categoryId: item.groupId, categoryList: [item.id] }));
+        (groupIndex > -1 ?
+            filters[groupIndex].categoryList.push(item.id) :
+            filters.push({ categoryId: item.groupId, categoryList: [item.id] }));
         return filters;
     }
 
@@ -54,17 +53,17 @@ const SearchForm = ({ hasSelect, selectList }) => {
         return filters;
     }
 
-    function mapCategoriesWithFilters(categoriesList, filteredCategories) {
+    function mapCategoriesWithFilters(categoriesList, filteredItems) {
         return categoriesList.map(group => {
-            const filteredGroupIndex = filteredCategories.findIndex(filteredItem => filteredItem.categoryId === group.categoryId);
-            const isGroupInFilters = filteredGroupIndex > -1;
+            const filteredGroupIndex = filteredItems.findIndex(filteredItem => filteredItem.categoryId === group.categoryId);
+            const isGroupFiltered = filteredGroupIndex > -1;
 
             group.list = group.list.map(category => {
-                if (isGroupInFilters) {
-                    const checked = filteredCategories[filteredGroupIndex].categoryList.indexOf(category.id) > -1;
-                    return ({ ...category, checked: checked });
+                if (isGroupFiltered) {
+                    const isChecked = filteredItems[filteredGroupIndex].categoryList.some((id) => category.id === id);
+                    return ({ ...category, checked: isChecked });
                 }
-                if (!isGroupInFilters) { return ({ ...category, checked: false }); }
+                return ({ ...category, checked: false });
             });
 
             return group;
@@ -84,7 +83,7 @@ const SearchForm = ({ hasSelect, selectList }) => {
                 <Dropdown renderBtn={{ text: "Choose filters", type: "bg-white" }}>
                     <GrouppedList
                         type="centered"
-                        list={categoriesMappedWithCheckedProp}
+                        list={categoriesMapped}
                         definitions={{ title: "categoryName", itemsList: "list", groupId: "categoryId" }}
                         gaps="lg"
                         itemsConvertType="checkbox"
