@@ -5,28 +5,31 @@ import Button from '../Button/Button';
 
 const SearchForm = ({ hasSelect, selectList }) => {
 
-    //select List i filters są z globalState
-    // po tym jak zrobie global state, trzeba przerobić funkcję, żeby miała filters i select list z global state
+    //select List i filteredCategories są z globalState
 
-    const [filters, setFilters] = useState([]);
+    // zaktualizować stany checkboxów, żeby utrzymywały się dłużej, były zależne od state
+
+    const [filteredCategories, setFilteredCategories] = useState([]);
     const [searchText, setSearchText] = useState("");
 
-    useEffect(() => console.log(filters));
+    useEffect(() => console.log(filteredCategories));
 
-    const [categoriesMappedWithCheckedProp, setCategoriesMappedWithCheckedProp] = useState(mapCategoriesWithFilters(selectList, filters));
+    const [categoriesMappedWithCheckedProp, setCategoriesMappedWithCheckedProp] = useState(mapCategoriesWithFilters(selectList, filteredCategories));
 
     function handleChange(e) {
         setSearchText(e.target.value);
     }
 
+    // po tym jak zrobie global state, trzeba przerobić funkcję, żeby miała filteredcategories i select list z global state
+
     function handleCheckboxChange(item) {
-        const updatedFilters = updatefilters(filters, item);
+        const updatedFilters = updateFilteredCategories(filteredCategories, item);
         const updatedSelectList = mapCategoriesWithFilters(selectList, updatedFilters);
-        setFilters(updatedFilters);
+        setFilteredCategories(updatedFilters);
         setCategoriesMappedWithCheckedProp(updatedSelectList);
     }
 
-    function updatefilters(filters, item) {
+    function updateFilteredCategories(filters, item) {
         const { id, groupId } = item;
         const groupIndex = filters.findIndex(filterItem => filterItem.categoryId === groupId);
         return (
@@ -40,34 +43,33 @@ const SearchForm = ({ hasSelect, selectList }) => {
     }
 
     function removeItem(filters, groupIndex, id) {
-        const categoryList = filters[groupIndex].categoryList;
-        const isLastItemInCategory = (categoryList.length === 1);
-
+        const isLastItemInCategory = (filters[groupIndex].categoryList.length === 1);
         if (isLastItemInCategory) {
             filters.splice(groupIndex, 1);
         } else {
-            const itemIndex = categoryList.indexOf(id);
-            categoryList.splice(itemIndex, 1);
+            const categories = filters[groupIndex].categoryList;
+            const categoryIndex = categories.indexOf(id);
+            categories.splice(categoryIndex, 1);
         }
         return filters;
     }
 
-    function mapCategoriesWithFilters(selectList, filters) {
-        return selectList.map(selectGroup => {
+    function mapCategoriesWithFilters(categoriesList, filteredCategories) {
+        return categoriesList.map(group => {
+            const filteredGroupIndex = filteredCategories.findIndex(filteredItem => filteredItem.categoryId === group.categoryId);
+            const isGroupInFilters = filteredGroupIndex > -1;
 
-            const groupIndexInFilters = filters.findIndex(filteredItem => filteredItem.categoryId === selectGroup.categoryId);
-            const isGroupFiltered = groupIndexInFilters > -1;
-
-            selectGroup.list = selectGroup.list.map(selectItem => {
-                if (isGroupFiltered) {
-                    const isChecked = filters[groupIndexInFilters].categoryList.some((item) => item.id === selectItem.id);
-                    return ({ ...selectItem, checked: isChecked });
+            group.list = group.list.map(category => {
+                if (isGroupInFilters) {
+                    const checked = filteredCategories[filteredGroupIndex].categoryList.indexOf(category.id) > -1;
+                    return ({ ...category, checked: checked });
                 }
-                return ({ ...selectItem, checked: false });
+                if (!isGroupInFilters) { return ({ ...category, checked: false }); }
             });
-            return selectGroup;
+
+            return group;
         });
-    };
+    }
 
     function submitSearch(e) {
         e.preventDefault();
