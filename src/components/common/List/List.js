@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 
-const List = ({ type, listItems, groupId, gapsSize, itemsConvertType }) => {
+const List = ({ type, listItems, groupId, gapsSize, itemsConvertType, eventHandler }) => {
     let classNames = "v-list";
 
     if (type === "centered") {
@@ -18,8 +18,7 @@ const List = ({ type, listItems, groupId, gapsSize, itemsConvertType }) => {
     return (
         <ul className={classNames}>
             {listItems.map((item) => <li className="v-list__item" key={item.id}>
-                {(itemsConvertType === 'checkbox') && (<Checkbox name={item.name} groupId={groupId} type="transparent" />)}
-                {!itemsConvertType && (item.component)}
+                {(itemsConvertType === 'checkbox') ? (<Checkbox name={item.name} groupId={groupId} id={item.id} type="transparent" checked={item.checked} onChange={eventHandler} />) : (item.component)}
             </li>)}
         </ul>
     );

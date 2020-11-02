@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 
-const Checkbox = ({ name, group, type }) => {
-    const [value, setValue] = useState(false);
+const Checkbox = ({ name, groupId, type, onChange, id, checked }) => {
+    const [value, setValue] = useState(checked);
 
-    function handleInputChange(e) {
+    function handleChange(e) {
         e.stopPropagation();
+        if (onChange) {
+            onChange({
+                event: e,
+                groupId,
+                id,
+                value: !value
+            });
+        }
         setValue(!value);
     }
 
@@ -16,11 +24,12 @@ const Checkbox = ({ name, group, type }) => {
         <div className={classNames}>
             <input
                 id={name}
+                groupid={groupId}
                 name={name}
                 type="checkbox"
                 checked={value}
                 className="checkbox__input"
-                onChange={handleInputChange}
+                onChange={handleChange}
             />
             <label className="checkbox__label" htmlFor={name}>{name} </label>
         </div>

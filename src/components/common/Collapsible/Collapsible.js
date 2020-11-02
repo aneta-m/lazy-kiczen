@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Button from '../Button/Button';
 
-const Collapsible = ({ topContent, header, children }) => {
+const Collapsible = ({ topContent, header, children, isHeaderBtn }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [topContentHeight, setTopContentHeight] = useState(0);
@@ -11,7 +11,6 @@ const Collapsible = ({ topContent, header, children }) => {
     const handleClick = (e) => {
         e.stopPropagation();
         setIsOpen(prevIsOpen => !prevIsOpen);
-        console.log(topContentHeight + " " + mainContentHeight);
     };
 
     const topContentElement = useRef(null);
@@ -33,13 +32,13 @@ const Collapsible = ({ topContent, header, children }) => {
                 </div>
                 :
                 ""}
-            {header}
-            <div className="collapsible__main-content" style={isOpen ? { height: mainContentHeight } : { height: "0" }} >
+            {isHeaderBtn ? <Button rightIcon={isOpen ? "fas fa-angle-up" : "fas fa-angle-down"} rightIconType="primary" onClick={handleClick}>{header}</Button> : header}
+            < div className="collapsible__main-content" style={isOpen ? { height: mainContentHeight } : { height: "0" }} >
                 <div className="collapsible__main-content-inner" ref={mainContentElement}>
                     {children}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

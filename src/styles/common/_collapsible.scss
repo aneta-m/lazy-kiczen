@@ -21,6 +21,10 @@
 
     &__btn {
         display: none;
+
+        &--mobile {
+            display: block;
+        }
     }
 
     &--isOpen {

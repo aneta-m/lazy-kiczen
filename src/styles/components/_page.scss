@@ -1,5 +1,7 @@
 @import '../utilities/module';
 
+//zrobić tak, zeby page__aside na fixed dał się scrollować, a nie scrollowało się to co jest pod spodem + rozkminić jak najlepiej będzie wygladać (czy z marginesami, czy z paddingiem)
+
 .page {
     &__inner {
         min-height: 100vh;
@@ -17,11 +19,11 @@
     &__aside {
         max-width: 400px;
         margin: 0.5rem;
-        // width: 100%;
+        width: 100%;
     }
 
     &__main {
-        padding: 0 0.5rem;
+        padding: 0 0.75rem;
     }
 
     &__modal {

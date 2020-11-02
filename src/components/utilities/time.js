@@ -22,6 +22,13 @@ export const createDate = (dateObject) => {
     return (new Date(dateObject.year, dateObject.month, dateObject.day));
 };
 
+/**
+ * This function does soemthing...
+ * * item
+ * * item2 ```something``` bla
+ * @param {object} dateParamObject {year: string, month: string, day: string}
+ * @return {string} lol ?? 
+ */
 export const getLastPlannedTimeDescription = (dateParamObject) => {
 
     let lastPlannedDate;

@@ -4,14 +4,16 @@ import InlineList from '../InlineList/InlineList';
 import Collapsible from '../Collapsible/Collapsible';
 import Text from '../Text/Text';
 import Heading from '../Heading/Heading';
+import { getLastPlannedTimeDescription } from '../../utilities/time';
 
 // utworzyć elementy card i sprawdzić czy style z card.scss dzialają
 
 const RecipeCard = ({ isExpandable, item }) => {
 
-    const { asideText, title, categories, url } = item;
-
-    const topContent = asideText ? <Text color="light" size="sm" padding="bottom-sm">{asideText}</Text> : "";
+    const { planned, title, categories, url } = item;
+    // posortować tu planned array??? czy lepiej w globalnym stacie?
+    const lastPlannedText = planned && planned.length > 0 ? getLastPlannedTimeDescription(planned[planned.length - 1]) : "";
+    const topContent = planned ? <Text color="light" size="sm" padding="bottom-sm">{lastPlannedText}</Text> : "";
     const headerElement = <Heading size="m" weight="normal" padding="bottom-xs">{title}</Heading>;
     const categoriesJoined = categories.join(", ");
     const categoriesElement = <Text padding="bottom">{categoriesJoined[0].toUpperCase() + categoriesJoined.slice(1)}</Text>;

@@ -1,7 +1,8 @@
 import React from 'react';
 // import classnames from 'classnames';
 
-const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, rightIcon, leftIconType, rightIconType, leftIconSize, rightIconSize, leftIconPadding, rightIconPadding, onClick, children, className }) => {
+
+const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, rightIcon, leftIconType, rightIconType, leftIconSize, rightIconSize, leftIconPadding, rightIconPadding, position, onClick, children, className }) => {
 
     let btnClasses = "btn";
     let leftIconElement = "";
@@ -27,6 +28,7 @@ const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, right
     text && (btnClasses += ` btn--text-${text}`);
     contentAlign && (btnClasses += ` btn--align-${contentAlign}`);
     (leftIcon && rightIcon) && (btnClasses += ` btn--has-2-icons`);
+    position && (btnClasses += ` btn--position-${position}`);
     className && (btnClasses += ` ${className}`);
 
     if (href) {
@@ -38,4 +40,5 @@ const Button = ({ type, href, size, padding, text, contentAlign, leftIcon, right
         <button className={btnClasses} onClick={onClick}>{leftIconElement} {children} {rightIconElement}</button>
     );
 };
+
 export default Button;

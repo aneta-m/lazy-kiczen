@@ -1,7 +1,7 @@
 import React from 'react';
 import List from '../List/List';
 
-const GrouppedList = ({ type, list, definitions, itemsConvertType, gaps }) => {
+const GrouppedList = ({ type, list, definitions, itemsConvertType, gaps, eventHandler }) => {
 
     const { title, groupId, itemsList } = definitions;
     let classNames = "v-list";
@@ -16,13 +16,14 @@ const GrouppedList = ({ type, list, definitions, itemsConvertType, gaps }) => {
 
     const listContent = list.map(itemsGroup =>
         <li className="v-list__group" key={itemsGroup[groupId]}>
-            <h4 className="hd-s hd--center text--capitalize">{itemsGroup[title]}</h4>
+            <h4 className="hd-s hd--align-center text--capitalize">{itemsGroup[title]}</h4>
             <List
                 type={type}
                 gapsSize={gaps}
                 listItems={itemsGroup[itemsList]}
                 groupId={itemsGroup[groupId]}
-                itemsConvertType={itemsConvertType ? itemsConvertType : false} >
+                itemsConvertType={itemsConvertType ? itemsConvertType : false}
+                eventHandler={eventHandler}>
             </List>
         </li>);
 

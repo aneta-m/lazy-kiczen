@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../Logo/Logo';
 import NavSimple from '../NavSimple/NavSimple';
-import Nav from '../Nav/Nav';
+import MobileHeader from '../MobileHeader/MobileHeader';
+import DesktopNav from '../DesktopNav/DesktopNav';
 import SearchForm from '../../common/SearchForm/SearchForm';
+import Button from '../../common/Button/Button';
 
-const Header = ({ layout, hasSearch }) => {
+const Header = ({ layout, hasSearch, isMobile }) => {
+
     const hasSearchModifierClass = hasSearch ? "header--has-search" : "";
 
     if (layout === "simple") {
@@ -28,21 +31,16 @@ const Header = ({ layout, hasSearch }) => {
         );
     }
 
-    return (
-        <header className={`header ${hasSearchModifierClass} header--actve page__header`}>
+    return (isMobile ?
+        <MobileHeader />
+        :
+        <header className={`header ${hasSearchModifierClass} page__header`}>
             <div className="header__inner">
                 <Logo />
-                <div className="header__nav-action">
-                    <button className="btn btn--no-padding"><i className="fas fa-bars btn__icon btn__icon--size-lg"></i></button>
-                </div>
-                <div className="header__search">
-                    <SearchForm />
-                </div>
-                <Nav />
+                <DesktopNav />
             </div>
         </header>
     );
-
 };
 
 export default Header;

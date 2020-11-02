@@ -137,6 +137,10 @@
         width: 100%;
     }
 
+    &--size-xl {
+        font-size: $font-xl;
+    }
+
     //TEXT
 
     &--style-bold {
@@ -149,6 +153,13 @@
 
     &--align-left {
         text-align: left;
+    }
+
+    &--position-fixed {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 2;
     }
 
     &--has-2-icons {
