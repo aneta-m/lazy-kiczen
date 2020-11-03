@@ -4,7 +4,7 @@ import Header from '../../layout/Header/Header';
 import Main from '../../layout/Main/Main';
 import Aside from '../../layout/Aside/Aside';
 import Modal from '../../common/Modal/Modal';
-import Slider from '../../common/Slider/Slider';
+import Slideshow from '../../common/Slideshow/Slideshow';
 import Planner from '../../common/Planner/Planner';
 import Cards from '../../common/Cards/Cards';
 import Button from '../../common/Button/Button';
@@ -34,9 +34,9 @@ function Home() {
 
             {(isMobile && isPlannerVisible) &&
                 <Modal onClose={togglePlanner}>
-                    <Slider>
+                    <Slideshow>
                         <Planner />
-                    </Slider>
+                    </Slideshow>
                 </Modal>
             }
 
@@ -45,9 +45,11 @@ function Home() {
 
             {!isMobile &&
                 <Aside>
-                    <Slider>
+                    <Slideshow>
                         <Planner />
-                    </Slider>
+                        <Planner />
+
+                    </Slideshow>
                 </Aside>}
             <Main
                 layout="basic"
