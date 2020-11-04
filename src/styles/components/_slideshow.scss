@@ -3,8 +3,21 @@
 .slideshow {
 
     &__inner {
-        padding: 1.5rem 0.5rem;
         position: relative;
+        overflow-x: hidden;
+    }
+
+    &__slide {
+        transition: left 0.5s;
+
+        &--prev {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            left: 0;
+        }
     }
 
     &__controller {
@@ -44,6 +57,8 @@
         &--active {
             background-color: $secondary-color;
         }
+
+
     }
 }
 

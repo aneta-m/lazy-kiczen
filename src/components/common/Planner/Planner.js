@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Planner = () => {
+const Planner = ({ number }) => {
     return (
-        <div className="planner">
-            <h3 className="hd-m">Current week plan</h3>
+        <div className="planner bla" >
+            <h3 className="hd-m">{`${number} week plan`}</h3>
             <ul className="planner__list">
                 <li className="planner-item">
                     <h4 className="planner-item__title"> Monday</h4>

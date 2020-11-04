@@ -45,9 +45,12 @@ function Home() {
 
             {!isMobile &&
                 <Aside>
-                    <Slideshow>
-                        <Planner />
-                        <Planner />
+                    <Slideshow activeSlide={2}>
+                        <Planner number="1" />
+                        <Planner number="2" />
+                        <Planner number="3" />
+                        <Planner number="4" />
+                        <Planner number="5" />
 
                     </Slideshow>
                 </Aside>}
